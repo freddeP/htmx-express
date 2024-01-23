@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+
+header, main, footer{
+    min-height: 30vh;
+    border-bottom: 1px solid #aaa;
+}
+
+.cars{
+    padding:3%;
+
+}
+.cars>*{
+    display:grid;
+    gap:30px;
+    border:1px solid #ddd;
+    padding:3%;
+}
+
+.create{
+    padding:5%;
+}
+
+.create input{
+    width:100%;
+    padding:1%;
+    font-size:1.3rem;
+}

@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        script(src="https://unpkg.com/htmx.org@1.9.10")
+        link(rel="stylesheet", href="style.css")
+    body
+        header 
+            h1 my pug express htmx page 
+
+        main
+            div(class = "create")
+                form(action="/cars", method="post" 
+                    hx-post="/cars" 
+                    hx-trigger="submit" 
+                    hx-target=".cars" 
+                    hx-swap="afterbegin"
+                    hx-on::after-request = "this.reset()"
+                  
+                    )
+
+                    input(type="text", name="brand", placeholder = "Brand") 
+                    input(type="text", name="model", placeholder = "Model") 
+                    input(type="submit", value = "save") 
+
+
+            div(class="cars" 
+                hx-get="/cars" 
+                hx-trigger = "load" 
+                hx-swap="innerHTML" ) bilar kommer....
+
+        footer
+            h3 end of page

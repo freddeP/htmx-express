@@ -1,0 +1,12 @@
+
+if cars 
+    each car in cars
+        div(id=car.id) 
+            h3=car.brand 
+            p 
+                i=car.model
+            button(hx-delete = "/cars/"+car.id, 
+                hx-trigger = "click", 
+                hx-target = "#"+car.id, 
+                hx-swap="outerHTML"
+                hx-confirm = "Are you sure? Car will be deletet...") delete
